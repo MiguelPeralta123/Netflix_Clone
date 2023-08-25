@@ -90,11 +90,11 @@ const Container = styled.div`
                 }
 
                 h4 {
-                    margin-top: 1rem;
+                    margin-top: 1.5rem;
                 }
 
                 h6 {
-                    margin-top: -1.5rem;
+                    margin: 1.5rem 0;
                 }
             }
 

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import TopNav from '../components/TopNav';
 import { styled } from 'styled-components'
+import { useNavigate } from 'react-router-dom';
+
+import TopNav from '../components/TopNav';
+import Card from '../components/Card';
 
 const Netflix = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const navigate = useNavigate()
 
     window.onscroll = () => {
         setIsScrolled(window.pageYOffset === 0 ? false : true)
@@ -21,15 +26,16 @@ const Netflix = () => {
                     alt='hero' />
                 <div className='container'>
                     <div className='title'>
-                        <h1>Superman</h1>
+                        <h1>The Avengers</h1>
                         <p>Lorem ipsum sunt culpa nostrud culpa officia sint tempor commodo eiusmod aute elit reprehenderit in exercitation adipisicing. Duis aliquip fugiat laboris eu velit cupidatat qui culpa amet et non. In pariatur ipsum culpa sint voluptate duis veniam id in incididunt. Laboris est adipisicing cupidatat fugiat cupidatat duis ex sunt quis proident. Eu id aute velit voluptate cillum ullamco eu.</p>
                     </div>
                     <div className='buttons'>
-                        <button className='btn btn-play'>Play</button>
+                        <button className='btn btn-play' onClick={() => navigate('/player')}>Play</button>
                         <button className='btn btn-more'>More</button>
                     </div>
                 </div>
             </div>
+            <Card />
         </HeroContainer>
     );
 }
@@ -86,16 +92,16 @@ const HeroContainer = styled.div`
                     border-radius: 1rem;
                     cursor: pointer;
                 }
+                
+                .btn:hover {
+                    scale: 1.05;
+                    transition: 0.2s ease-in-out;
+                }
 
                 .btn-play {
                     background-color: white;
                     color: rgb(216, 24, 32);
                     border: none;
-                }
-                
-                .btn:hover {
-                    scale: 1.05;
-                    transition: 0.2s ease-in-out;
                 }
 
                 .btn-more {

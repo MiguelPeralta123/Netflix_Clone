@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { styled } from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 import { AiOutlineLogout } from 'react-icons/ai'
@@ -116,11 +116,6 @@ const NavContainer = styled.div`
                 border: none;
                 border-radius: 50%;
                 cursor: pointer;
-            }
-
-            button:hover {
-                scale: 1.05;
-                transition: 0.2s ease-in-out;
             }
             
             svg {

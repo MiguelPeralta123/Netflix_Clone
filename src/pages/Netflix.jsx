@@ -1,15 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { styled } from 'styled-components'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import TopNav from '../components/TopNav';
 import Card from '../components/Card';
+import { fetchMovies, fetchGenres } from '../store';
 
 const Netflix = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
-
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    
+    const genresLoaded = useSelector(state => state.netflix.genresLoaded)
+    const movies = useSelector(state => state.netflix.movies)
+
+    useEffect(() => {
+        dispatch(fetchGenres())
+    }, [dispatch])
+
+    useEffect(() => {
+        if (genresLoaded) {
+            dispatch(fetchMovies({ type: 'all' }))
+        }
+    }, [genresLoaded, dispatch])
 
     window.onscroll = () => {
         setIsScrolled(window.pageYOffset === 0 ? false : true)

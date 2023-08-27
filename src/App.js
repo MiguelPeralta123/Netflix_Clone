@@ -6,7 +6,6 @@ import SignUp from './pages/SignUp'
 import Player from './pages/Player'
 import TvShow from './pages/TvShow'
 import Movie from './pages/Movie'
-import Header from './components/Header';
 
 function App() {
   return (

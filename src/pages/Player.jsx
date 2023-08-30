@@ -31,7 +31,7 @@ const PlayerContainer = styled.div`
 
             svg {
                 margin-left: 1rem;
-                font-size: 2.2rem;
+                font-size: 1.8rem;
                 color: white;
                 cursor: pointer;
             }

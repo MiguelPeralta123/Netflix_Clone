@@ -26,7 +26,7 @@ const TopNav = ({ isScrolled }) => {
             <nav className={isScrolled ? 'scrolled' : 'notScrolled'}>
                 <div className='leftSide'>
                     <div className='logo'>
-                        <img src='https://res.cloudinary.com/ehizeex-shop/image/upload/v1668265433/NetflixApp/2560px-Netflix_2015_logo.svg_rbicwl_knwp6f.png' alt='logo' />
+                        <img src='https://res.cloudinary.com/ehizeex-shop/image/upload/v1668265433/NetflixApp/2560px-Netflix_2015_logo.svg_rbicwl_knwp6f.png' alt='Netflix logo' onClick={() => navigate('/')} />
                     </div>
                     <ul className='links'>
                         {
@@ -69,7 +69,7 @@ const NavContainer = styled.div`
         justify-content: space-between;
         position: fixed;
         align-items: center;
-        z-index: 2;
+        z-index: 101;
         padding: 0.5rem;
         transition: 0.3s ease-in-out;
 
@@ -84,6 +84,7 @@ const NavContainer = styled.div`
                 justify-content: center;
                 align-items: center;
                 margin-right: 1rem;
+                cursor: pointer;
 
                 img {
                     width: 8rem;

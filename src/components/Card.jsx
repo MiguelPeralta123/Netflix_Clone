@@ -7,7 +7,7 @@ import { BsCheck } from "react-icons/bs";
 import { styled } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
-const Card = () => {
+export default React.memo(function Card({ movieData }) {
 
     const [isHovered, setIsHovered] = useState(false);
     const navigate = useNavigate()
@@ -17,17 +17,19 @@ const Card = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}>
             <img
-                src='https://wallpapers.com/images/hd/the-avengers-vm16xv4a69smdauy.jpg'
-                alt='Movie poster'
+                src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
+                alt='Movie Poster'
                 onClick={() => navigate('/player')} />
             {
                 isHovered && (
                     <div className='card-hover'>
 
-                        <video src='https://res.cloudinary.com/ehizeex-shop/video/upload/v1668377666/NetflixApp/Action_mlw9wx.mp4' autoPlay loop onClick={() => navigate('/player')} />
+                        <img src={`https://image.tmdb.org/t/p/w500${movieData.image}`} alt='Movie Poster' onClick={() => navigate('/player')} />
 
                         <div className='info-container'>
-                            <h3 className='movie-name' onClick={() => navigate('/player')}>The Avengers</h3>
+                            <h3 className='movie-name' onClick={() => navigate('/player')}>
+                                {movieData.name}
+                            </h3>
                             <div className='icons'>
                                 <div className='controls'>
                                     <IoPlayCircleSharp title='Play' onClick={() => navigate('/player')} />
@@ -42,10 +44,9 @@ const Card = () => {
                             </div>
                             <div className='genres'>
                                 <ul>
-                                    <li>Action</li>
-                                    <li>Action</li>
-                                    <li>Action</li>
-                                    <li>Action</li>
+                                    {movieData.genres.map((genre) => {
+                                        return <li key={genre}>{genre}</li>
+                                    })}
                                 </ul>
                             </div>
                         </div>
@@ -54,7 +55,7 @@ const Card = () => {
             }
         </CardContainer>
     );
-}
+})
 
 const CardContainer = styled.div`
     width: 230px;
@@ -66,27 +67,21 @@ const CardContainer = styled.div`
         width: 100%;
         height: 100%;
         border-radius: 0.4rem;
-        z-index: 10;
     }
     
     .card-hover {
         width: 20rem;
         height: max-content;
         position: absolute;
-        top: -10vh;
-        left: 0;
+        bottom: 1vh;
+        left: 1vh;
         border: 0.1rem solid gray;
         border-radius: 0.4rem;
         background-color: #181818;
         z-index: 99;
 
-        video {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 0.4rem;
+        img {
             cursor: pointer;
-            z-index: 4;
         }
 
         .info-container {
@@ -139,5 +134,3 @@ const CardContainer = styled.div`
         }
     }
 `
-
-export default Card;

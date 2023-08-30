@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import TopNav from '../components/TopNav';
-import Card from '../components/Card';
 import { fetchMovies, fetchGenres } from '../store';
+import SliderContainer from '../components/SliderContainer';
 
 const Netflix = () => {
 
@@ -50,12 +50,14 @@ const Netflix = () => {
                     </div>
                 </div>
             </div>
-            <Card />
+            <SliderContainer movies={movies} />
         </HeroContainer>
     );
 }
 
 const HeroContainer = styled.div`
+    margin-bottom: 2rem;
+
     .hero {
         position: relative;
 

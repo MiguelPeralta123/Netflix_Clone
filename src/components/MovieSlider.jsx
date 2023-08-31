@@ -28,10 +28,7 @@ export default React.memo(function MovieSlider({ data, title }) {
 })
 
 const Container = styled.div`
-    position: relative;
-    gap: 0.7rem;
     padding: 1rem 0;
-    z-index: 0;
 
     h1 {
         margin-left: 2rem;
@@ -42,5 +39,9 @@ const Container = styled.div`
 
     .wrapper {
         margin-left: 1rem;
+
+        .splide__track {
+            overflow: visible;
+        }
     }
 `

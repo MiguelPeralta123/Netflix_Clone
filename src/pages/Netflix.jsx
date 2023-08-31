@@ -56,7 +56,7 @@ const Netflix = () => {
 }
 
 const HeroContainer = styled.div`
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 
     .hero {
         position: relative;

@@ -72,39 +72,54 @@ const Container = styled.div`
         grid-template-columns: 15vh 85vh;
 
         .body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
 
             .text {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
                 font-size: 1.5rem;
                 color: white;
 
                 h1 {
-                    margin: 0;
-                    padding: 0 22rem;
+                    max-width: 35rem;
+                    margin: 2rem auto 0 auto;
+                    padding: 0 2rem;
+                    font-size: 3rem;
+
+                    @media (max-width: 480px) {
+                        font-size: 2.5rem;
+                    }
                 }
 
                 h4 {
-                    margin-top: 1.5rem;
+                    max-width: 35rem;
+                    margin: 1.5rem auto 0 auto;
+                    padding: 0 2rem;
+                    text-align: center;
+
+                    @media (max-width: 480px) {
+                        text-align: start;
+                    }
                 }
 
                 h6 {
-                    margin: 1.5rem 0;
+                    max-width: 40rem;
+                    margin: 1.5rem auto 2rem auto;
+                    padding: 0 2rem;
+                    text-align: center;
+
+                    @media (max-width: 480px) {
+                        text-align: start;
+                    }
                 }
             }
 
             .form {
-                display: grid;
-                grid-template-columns: ${(showPassword) => showPassword ? '1fr 1fr' : '2fr 1fr'};
-                width: 60%;
+                display: flex;
+                max-width: 45rem;
+                margin: 0 auto;
+                padding: 0 2rem;
+                text-align: center;
 
                 input {
-                    width: 40rem;
+                    width: 100%;
                     color: black;
                     padding: 1rem;
                     font-size: 1.05rem;
@@ -117,10 +132,13 @@ const Container = styled.div`
                     background-color: rgb(216, 24, 32);
                     color: white;
                     font-size: 1.05rem;
-                    font-weight: bolder;
                     border: none;
                     cursor: pointer;
                 }
+            }
+
+            @media (max-width: 480px) {
+                margin-top: 1rem;
             }
         }
     }

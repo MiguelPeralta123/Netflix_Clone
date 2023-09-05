@@ -6,12 +6,21 @@ import '@splidejs/react-splide/css';
 import Card from './Card'
 
 export default React.memo(function MovieSlider({ data, title }) {
+
+    const splideOptions = {
+        perPage: 5,
+        gap: "0.6rem",
+        drag: 'free',
+        arrows: false,
+        pagination: false
+    }
+
     return (
         <Container>
             <h1>{title}</h1>
             <div className='wrapper'>
                 <Splide
-                    options={{ perPage: 5, gap: "0.6rem", drag: 'free', arrows: false, pagination: false }}>
+                    options={splideOptions}>
                     {
                         data.map((movie, index) => {
                             return (
@@ -39,6 +48,7 @@ const Container = styled.div`
 
     .wrapper {
         margin-left: 1rem;
+        width: 1250px;
 
         .splide__track {
             overflow: visible;

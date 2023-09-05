@@ -64,12 +64,9 @@ const Container = styled.div`
         grid-template-columns: 15vh 85vh;
 
         .body-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            max-width: 25rem;
             height: 75vh;
-            gap: 2rem;
+            margin: 0 auto;
 
             .body {
                 display: flex;
@@ -77,6 +74,7 @@ const Container = styled.div`
                 align-items: center;
                 justify-content: center;
                 height: 70vh;
+                margin: 0 2rem;
                 padding: 2rem;
                 gap: 2rem;
                 background-color: rgba(0, 0, 0, 0.7);
@@ -87,9 +85,9 @@ const Container = styled.div`
                     display: flex;
                     flex-direction: column;
                     gap: 2rem;
+                    width: 100%;
 
                     input {
-                        width: 20rem;
                         height: 2rem;
                         padding: 0.25rem 1rem;
                         border-radius: 0.5rem;
@@ -108,6 +106,10 @@ const Container = styled.div`
                         cursor: pointer;
                     }
                 }
+            }
+
+            @media (max-width: 480px) {
+                margin-top: 1rem;
             }
         }
     }

@@ -84,10 +84,14 @@ const HeroContainer = styled.div`
                     background: -webkit-linear-gradient(#eee, rgb(128, 13, 13));
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
+
+                    @media (max-width: 768px) {
+                        font-size: 2rem;
+                    }
                 }
 
                 p {
-                    width: 35rem;
+                    max-width: 35rem;
                     margin-bottom: -2rem;
                     font-family: 'lexend Deca';
                     color: white;
@@ -126,6 +130,11 @@ const HeroContainer = styled.div`
                     color: white;
                     border: 0.1rem solid white;
                 }
+            }
+
+            @media (max-width: 768px) {
+                top: 7rem;
+                padding: 0 2rem;
             }
         }
     }

@@ -22,12 +22,17 @@ const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     padding: 1.5rem 2rem;
 
     .logo {
         img {
             height: 3rem;
             cursor: pointer;
+
+            @media (max-width: 480px) {
+                height: 2rem;
+            }
         }
     }
 
@@ -40,6 +45,10 @@ const HeaderContainer = styled.div`
         border-radius: 0.2rem;
         font-weight: bolder;
         font-size: 1.05rem;
+
+        @media (max-width: 480px) {
+            font-size: 0.8rem;
+        }
     }
 `
 

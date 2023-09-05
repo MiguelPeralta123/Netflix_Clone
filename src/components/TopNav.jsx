@@ -77,7 +77,7 @@ const NavContainer = styled.div`
             display: flex;
             align-items: center;
             gap: 2rem;
-            padding-left: 4rem;
+            margin-left: 4rem;
 
             .logo {
                 display: flex;
@@ -102,6 +102,14 @@ const NavContainer = styled.div`
                     font-weight: bold;
                     text-decoration: none;
                 }
+
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
+
+            @media (max-width: 768px) {
+                margin-left: 2rem;
             }
         }
 
@@ -121,6 +129,10 @@ const NavContainer = styled.div`
             
             svg {
                 font-size: 2rem;
+            }
+
+            @media (max-width: 768px) {
+                margin-right: 2rem;
             }
         }
     }
